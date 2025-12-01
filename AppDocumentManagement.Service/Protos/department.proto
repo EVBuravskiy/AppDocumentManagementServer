@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace = "AppDocumentManagement.Service";
+
+package department;
+
+message MDepartment{
+        int32 DepartmentID = 1;
+        string DepartmentTitle = 2;
+        string DepartmentShortTitle = 3;
+}
+
+service departmentApi{
+    rpc AddDepartment (MDepartment) returns (DBoolReply);
+    rpc GetAllDepartments (EmptyRequest) returns (DepartmentListReply);
+    rpc GetDepartmentByID(IDRequest) returns (MDepartment);
+    rpc UpdateDepartment(MDepartment) returns (DBoolReply);
+    rpc RemoveDepartment(IDRequest) returns (DBoolReply);
+}
+
+message DBoolReply{
+    bool result = 1;
+}
+
+message EmptyRequest{}
+
+message IDRequest{
+    int32 ID = 1;
+}
+
+message DepartmentListReply{
+    repeated MDepartment MDepartments = 1;
+}
+

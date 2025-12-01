@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36127.28 d17.14
+VisualStudioVersion = 17.14.36127.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.DB", "AppDocumentManagement.DB\AppDocumentManagement.DB.csproj", "{FD828E29-E495-44DD-B384-879C2C8E0E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.Service", "AppDocumentManagement.Service\AppDocumentManagement.Service.csproj", "{D47624CA-F19A-42D5-98C7-717BF8E44F19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FD828E29-E495-44DD-B384-879C2C8E0E98} = {FD828E29-E495-44DD-B384-879C2C8E0E98}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

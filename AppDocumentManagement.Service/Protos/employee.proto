@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "AppDocumentManagement.Service";
+
+package employee;
+
+message MEmployee{
+        int32 EmployeeID = 1;
+        string EmployeeFirstName  = 2;
+        string EmployeeLastName = 3;
+        string EmployeeMiddleName = 4;
+        int32 DepartmentID = 5;
+        string Position = 6;
+        int32 EmployeeRole = 7;
+        int32 EmployeePhotoID = 8;
+        string EmployeePhone = 9;
+        string EmployeeEmail = 10;
+        string EmployeeInformation = 11;
+}
+
+service employeeApi{
+    rpc AddEmployee (MEmployee) returns (EBoolReply);
+    rpc GetAllEmployees (EmptyRequest) returns (EmployeesListReply);
+    rpc GetAllAvailableEmployees(EmptyRequest) returns (EmployeesListReply);
+    rpc GetEmployeeByID(EIDRequest) returns (MEmployee);
+    rpc GetEmployeesByDepartmentID(EIDRequest) returns (EmployeesListReply);
+    rpc RemoveEmployee(EIDRequest) returns (EBoolReply);
+    rpc UpdateEmployee(MEmployee) returns (EBoolReply);
+    rpc GetGeneralDirector(EmptyRequest) returns (MEmployee);
+    rpc CheckForAviableEmployee(EmptyRequest) returns (EBoolReply);
+}
+
+message EBoolReply{
+    bool result = 1;
+}
+
+message EmptyRequest{}
+
+message EIDRequest{
+    int32 ID = 1;
+}
+
+message EmployeesListReply{
+    repeated MEmployee Employees = 1;
+}
+

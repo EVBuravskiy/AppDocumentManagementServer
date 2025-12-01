@@ -92,14 +92,14 @@ namespace AppDocumentManagement.DB.Controllers
             return employeesByDepartment;
         }
 
-        public bool RemoveEmployee(Employee deletedEmployee)
+        public bool RemoveEmployee(int employeeID)
         {
             bool result = false;
             try
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    Employee currentEmployee = context.Employees.Where(x => x.EmployeeID == deletedEmployee.EmployeeID).FirstOrDefault();
+                    Employee currentEmployee = context.Employees.SingleOrDefault(x => x.EmployeeID == employeeID);
                     if (currentEmployee != null)
                     {
                         currentEmployee.isDeleted = true;

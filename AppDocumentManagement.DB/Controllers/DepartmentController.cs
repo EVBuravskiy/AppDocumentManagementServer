@@ -61,5 +61,56 @@ namespace AppDocumentManagement.DB.Controllers
             }
             return department;
         }
+
+        public bool UpdateDepartment(Department inputDepartment)
+        {
+            bool result = false;
+            try
+            {
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    Department currentDepartment = context.Departments.SingleOrDefault(x => x.DepartmentID == inputDepartment.DepartmentID);
+                    if (currentDepartment == null)
+                    {
+                        result = AddDepartment(inputDepartment);
+                        return result;
+                    }
+                    currentDepartment.DepartmentTitle = inputDepartment.DepartmentTitle;
+                    currentDepartment.DepartmentShortTitle = inputDepartment.DepartmentShortTitle;
+                    context.Departments.Update(currentDepartment);
+                    context.SaveChanges();
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка! Ошибка в обновлении данных отдела / департамента");
+            }
+            return result;
+        }
+
+        public bool RemoveDepartment(int departmentID)
+        {
+            bool result = false;
+            try
+            {
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    Department currentDepartment = context.Departments.FirstOrDefault(x => x.DepartmentID == departmentID);
+                    if (currentDepartment == null)
+                    {
+                        return result;
+                    }
+                    context.Departments.Remove(currentDepartment);
+                    context.SaveChanges();
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка! Ошибка в удалении департамента / отдела");
+            }
+            return result;
+        }
     }
 }
