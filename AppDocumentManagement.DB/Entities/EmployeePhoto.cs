@@ -1,0 +1,16 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AppDocumentManagement.DB.Entities
+{
+    public class EmployeePhoto
+    {
+        public int EmployeePhotoID { get; set; }
+        public string FileName { get; set; }
+        public string FileExtension { get; set; }
+        public byte[] FileData { get; set; }
+        public Employee Employee { get; set; }
+        public int EmployeeID { get; set; }
+        [NotMapped]
+        public string FilePath { get; set; }
+    }
+}
