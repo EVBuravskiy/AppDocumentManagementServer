@@ -8,8 +8,8 @@
         public string ContractorCompanyAddress { get; set; }
         public string? ContractorCompanyPhone { get; set; }
         public string? ContractorCompanyEmail { get; set; }
-        List<ExternalDocument> Documents { get; set; } = new List<ExternalDocument>();
+        List<ExternalDocument> ExternalDocuments { get; set; } = new List<ExternalDocument>();
         public string? ContractorCompanyInformation { get; set; }
-        public bool isDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; } = false;
     }
 }

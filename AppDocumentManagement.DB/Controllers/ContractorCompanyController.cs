@@ -49,7 +49,7 @@ namespace AppDocumentManagement.DB.Controllers
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    contractorCompanies = context.ContractorCompanies.Where(c => c.isDeleted == false).ToList();
+                    contractorCompanies = context.ContractorCompanies.Where(c => c.IsDeleted == false).ToList();
                 }
             }
             catch (Exception ex)
@@ -126,7 +126,7 @@ namespace AppDocumentManagement.DB.Controllers
                         ContractorCompany aviableContractorCompany = context.ContractorCompanies.SingleOrDefault(c => c.ContractorCompanyID == contractorCompanyID);
                         if (aviableContractorCompany != null)
                         {
-                            aviableContractorCompany.isDeleted = true;
+                            aviableContractorCompany.IsDeleted = true;
                             context.ContractorCompanies.Update(aviableContractorCompany);
                             context.SaveChanges();
                             result = true;

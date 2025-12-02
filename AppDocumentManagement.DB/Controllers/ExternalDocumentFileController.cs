@@ -71,15 +71,15 @@ namespace AppDocumentManagement.DB.Controllers
             return documentFiles;
         }
 
-        public bool RemoveDocumentFile(ExternalDocumentFile documentFile)
+        public bool RemoveExternalDocumentFile(int externalDocumentFileID)
         {
             bool result = false;
-            if (documentFile == null) return result;
+            if (externalDocumentFileID == 0) return result;
             try
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    ExternalDocumentFile aviableDocumentFile = context.ExternalDocumentFiles.SingleOrDefault(f => f.ExternalDocumentFileID == documentFile.ExternalDocumentFileID);
+                    ExternalDocumentFile aviableDocumentFile = context.ExternalDocumentFiles.SingleOrDefault(f => f.ExternalDocumentFileID == externalDocumentFileID);
                     if (aviableDocumentFile == null) return false;
                     context.ExternalDocumentFiles.Remove(aviableDocumentFile);
                     context.SaveChanges();

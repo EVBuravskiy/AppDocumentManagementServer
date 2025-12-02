@@ -14,10 +14,10 @@ namespace AppDocumentManagement.DB.Controllers
                 {
                     ContractorCompany contractorCompany = context.ContractorCompanies.Where(x => x.ContractorCompanyID == externalDocument.ContractorCompany.ContractorCompanyID).FirstOrDefault();
                     externalDocument.ContractorCompany = contractorCompany;
-                    if (externalDocument.EmployeeReceivedDocument != null)
+                    if (externalDocument.ReceivingEmployee != null)
                     {
-                        Employee employee = context.Employees.Where(e => e.EmployeeID == externalDocument.EmployeeReceivedDocument.EmployeeID).FirstOrDefault();
-                        externalDocument.EmployeeReceivedDocument = employee;
+                        Employee employee = context.Employees.Where(e => e.EmployeeID == externalDocument.ReceivingEmployee.EmployeeID).FirstOrDefault();
+                        externalDocument.ReceivingEmployee = employee;
                     }
                     context.ExternalDocuments.Add(externalDocument);
                     context.SaveChanges();
@@ -31,7 +31,7 @@ namespace AppDocumentManagement.DB.Controllers
             return result;
         }
 
-        public List<ExternalDocument> GetAllDocuments()
+        public List<ExternalDocument> GetAllExternalDocuments()
         {
             List<ExternalDocument> externalDocuments = new List<ExternalDocument>();
             try
@@ -55,7 +55,7 @@ namespace AppDocumentManagement.DB.Controllers
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    documents = context.ExternalDocuments.Where(d => d.EmployeeID == employeeReceivedDocumentID).ToList();
+                    documents = context.ExternalDocuments.Where(d => d.ReceivingEmployeeID == employeeReceivedDocumentID).ToList();
                 }
             }
             catch (Exception ex)
@@ -85,11 +85,11 @@ namespace AppDocumentManagement.DB.Controllers
                         aviableDocument.ExternalDocumentFiles = document.ExternalDocumentFiles;
                         aviableDocument.RegistrationDate = document.RegistrationDate;
                         aviableDocument.IsRegistated = document.IsRegistated;
-                        if (document.EmployeeReceivedDocument != null)
+                        if (document.ReceivingEmployee != null)
                         {
-                            Employee employee = context.Employees.SingleOrDefault(x => x.EmployeeID == document.EmployeeReceivedDocument.EmployeeID);
-                            aviableDocument.EmployeeReceivedDocument = employee;
-                            aviableDocument.SendingDate = document.SendingDate;
+                            Employee employee = context.Employees.SingleOrDefault(x => x.EmployeeID == document.ReceivingEmployee.EmployeeID);
+                            aviableDocument.ReceivingEmployee = employee;
+                            aviableDocument.ExternalDocumentSendingDate = document.ExternalDocumentSendingDate;
                         }
                         aviableDocument.ExternalDocumentStatus = document.ExternalDocumentStatus;
                         context.ExternalDocuments.Update(aviableDocument);

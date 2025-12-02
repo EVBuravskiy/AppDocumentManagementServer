@@ -13,9 +13,9 @@
         public DateTime RegistrationDate { get; set; }
         public string RegistrationNumber => ExternalDocumentID.ToString();
         public bool IsRegistated { get; set; }
-        public Employee? EmployeeReceivedDocument { get; set; }
-        public int? EmployeeID { get; set; }
-        public DateTime? SendingDate { get; set; }
+        public Employee? ReceivingEmployee { get; set; }
+        public int? ReceivingEmployeeID { get; set; }
+        public DateTime? ExternalDocumentSendingDate { get; set; }
         public DocumentStatus ExternalDocumentStatus { get; set; }
 
         public bool IsDeleted { get; set; } = false;
