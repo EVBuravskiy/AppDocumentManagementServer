@@ -66,15 +66,15 @@ namespace AppDocumentManagement.DB.Controllers
             return documentFiles;
         }
 
-        public bool RemoveInternalDocumentFile(InternalDocumentFile internalDocumentFile)
+        public bool RemoveInternalDocumentFile(int internalDocumentFileID)
         {
             bool result = false;
-            if (internalDocumentFile == null) return result;
+            if (internalDocumentFileID == 0) return result;
             try
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    InternalDocumentFile aviableDocumentFile = context.InternalDocumentFiles.SingleOrDefault(f => f.InternalDocumentFileID == internalDocumentFile.InternalDocumentFileID);
+                    InternalDocumentFile aviableDocumentFile = context.InternalDocumentFiles.SingleOrDefault(f => f.InternalDocumentFileID == internalDocumentFileID);
                     if (aviableDocumentFile == null) return result;
                     context.InternalDocumentFiles.Remove(aviableDocumentFile);
                     context.SaveChanges();
