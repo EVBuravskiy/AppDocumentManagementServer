@@ -1,14 +1,13 @@
 ﻿using AppDocumentManagement.DB.Entities;
-using System;
 
-namespace AppDocumentManagement.Service.Converters
+namespace AppDocumentManagement.EmployeeService.Converters
 {
     public class MDepartmentConverter
     {
         public static Department ConvertToDepartment(MDepartment mDepartment)
         {
             Department department = new Department();
-            department.DepartmentID = mDepartment.DepartmentID;  
+            department.DepartmentID = mDepartment.DepartmentID;
             department.DepartmentTitle = mDepartment.DepartmentTitle;
             department.DepartmentShortTitle = mDepartment.DepartmentShortTitle;
             return department;

@@ -92,15 +92,15 @@ namespace AppDocumentManagement.DB.Controllers
             return result;
         }
 
-        public bool RemoveRegistratedUser(RegistredUser inputUser)
+        public bool RemoveRegistratedUser(int registredUserID)
         {
             bool result = false;
-            if (inputUser == null) return result;
+            if (registredUserID == 0) return result;
             try
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    RegistredUser currentUser = context.RegistredUsers.SingleOrDefault(x => x.RegistredUserID == inputUser.RegistredUserID);
+                    RegistredUser currentUser = context.RegistredUsers.SingleOrDefault(x => x.RegistredUserID == registredUserID);
                     if (currentUser == null) return result;
                     currentUser.IsRegistered = false;
                     context.RegistredUsers.Update(currentUser);

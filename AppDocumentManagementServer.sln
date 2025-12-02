@@ -5,10 +5,9 @@ VisualStudioVersion = 17.14.36127.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.DB", "AppDocumentManagement.DB\AppDocumentManagement.DB.csproj", "{FD828E29-E495-44DD-B384-879C2C8E0E98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.Service", "AppDocumentManagement.Service\AppDocumentManagement.Service.csproj", "{D47624CA-F19A-42D5-98C7-717BF8E44F19}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FD828E29-E495-44DD-B384-879C2C8E0E98} = {FD828E29-E495-44DD-B384-879C2C8E0E98}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.EmployeeService", "AppDocumentManagement.EmployeeService\AppDocumentManagement.EmployeeService.csproj", "{1050982D-EB43-4FAF-98DC-DEF0CC4A9413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDocumentManagement.ExternalDocumentService", "AppDocumentManagement.ExternalDocumentService\AppDocumentManagement.ExternalDocumentService.csproj", "{184EEA3B-4011-4380-A8E7-273791BCF85D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +19,14 @@ Global
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD828E29-E495-44DD-B384-879C2C8E0E98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D47624CA-F19A-42D5-98C7-717BF8E44F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1050982D-EB43-4FAF-98DC-DEF0CC4A9413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1050982D-EB43-4FAF-98DC-DEF0CC4A9413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1050982D-EB43-4FAF-98DC-DEF0CC4A9413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1050982D-EB43-4FAF-98DC-DEF0CC4A9413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184EEA3B-4011-4380-A8E7-273791BCF85D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184EEA3B-4011-4380-A8E7-273791BCF85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184EEA3B-4011-4380-A8E7-273791BCF85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184EEA3B-4011-4380-A8E7-273791BCF85D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

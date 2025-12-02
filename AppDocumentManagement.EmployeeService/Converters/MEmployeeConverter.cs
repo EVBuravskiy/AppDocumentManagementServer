@@ -1,14 +1,13 @@
 ﻿using AppDocumentManagement.DB.Entities;
-using System;
 
-namespace AppDocumentManagement.Service.Converters
+namespace AppDocumentManagement.EmployeeService.Converters
 {
     public class MEmployeeConverter
     {
         public static Employee ConvertToEmployee(MEmployee mEmployee)
         {
             Employee employee = new Employee();
-            employee.EmployeeID = mEmployee.EmployeeID;  
+            employee.EmployeeID = mEmployee.EmployeeID;
             employee.EmployeeFirstName = mEmployee.EmployeeFirstName;
             employee.EmployeeLastName = mEmployee.EmployeeLastName;
             employee.EmployeeMiddleName = mEmployee.EmployeeMiddleName;

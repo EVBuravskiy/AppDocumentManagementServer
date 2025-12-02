@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\employee.proto" GrpcServices="Server" />
-	<Protobuf Include="Protos\department.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\service.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
