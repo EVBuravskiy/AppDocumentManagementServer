@@ -14,10 +14,10 @@ namespace AppDocumentManagement.EmployeeService.Converters
             employee.DepartmentID = mEmployee.DepartmentID;
             employee.Position = mEmployee.Position;
             employee.EmployeeRole = EmployeeRoleConverter.BackConvert(mEmployee.EmployeeRole);
-            employee.EmployeePhotoID = mEmployee.EmployeePhotoID;
             employee.EmployeePhone = mEmployee.EmployeePhone;
             employee.EmployeeEmail = mEmployee.EmployeeEmail;
             employee.EmployeeInformation = mEmployee.EmployeeInformation;
+            employee.IsDeleted = mEmployee.IsDeleted;
             return employee;
         }
 
@@ -31,10 +31,10 @@ namespace AppDocumentManagement.EmployeeService.Converters
             mEmployee.DepartmentID = employee.DepartmentID;
             mEmployee.Position = employee.Position;
             mEmployee.EmployeeRole = EmployeeRoleConverter.ToIntConvert(employee.EmployeeRole);
-            mEmployee.EmployeePhotoID = employee.EmployeePhotoID;
             mEmployee.EmployeePhone = employee.EmployeePhone;
             mEmployee.EmployeeEmail = employee.EmployeeEmail;
             mEmployee.EmployeeInformation = employee.EmployeeInformation;
+            mEmployee.IsDeleted = employee.IsDeleted;
             return mEmployee;
         }
     }

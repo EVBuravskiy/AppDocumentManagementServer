@@ -21,11 +21,13 @@ namespace AppDocumentManagement.DB.Controllers
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .Build();
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            //var config = new ConfigurationBuilder()
+            //    .AddJsonFile("appsettings.json")
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .Build();
+            //optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-CIIC8VG;Initial Catalog=AppDocumentsManagerDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
     }
+
 }

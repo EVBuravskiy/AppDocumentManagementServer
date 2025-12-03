@@ -63,10 +63,10 @@ message MEmployee{
         int32 DepartmentID = 5;
         string Position = 6;
         int32 EmployeeRole = 7;
-        int32 EmployeePhotoID = 8;
-        string EmployeePhone = 9;
-        string EmployeeEmail = 10;
-        string EmployeeInformation = 11;
+        string EmployeePhone = 8;
+        string EmployeeEmail = 9;
+        string EmployeeInformation = 10;
+        bool IsDeleted = 11;
 }
 
 message MEmployeesListReply{

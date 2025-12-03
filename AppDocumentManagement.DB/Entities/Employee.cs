@@ -10,17 +10,11 @@
         public int DepartmentID { get; set; }
         public string? Position { get; set; }
         public EmployeeRole EmployeeRole { get; set; }
-        public EmployeePhoto? EmployeePhoto { get; set; }
-        public int EmployeePhotoID { get; set; }
-        public string EmployeeFullName => $"{EmployeeLastName} {EmployeeFirstName} {EmployeeMiddleName}";
-        public string EmployeeShortName => $"{EmployeeLastName} {EmployeeFirstName.ElementAt(0)}.{EmployeeMiddleName.ElementAt(0)}.";
-        public List<ExternalDocument> Documents { get; set; } = new List<ExternalDocument>();
-        public List<InternalDocument> InternalDocuments { get; set; } = new List<InternalDocument>();
         public string? EmployeePhone { get; set; }
         public string? EmployeeEmail { get; set; }
         public string? EmployeeInformation { get; set; }
         public string EmployeeFirstMiddleName => $"{EmployeeFirstName} {EmployeeMiddleName}";
-        public bool isDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; } = false;
 
     }
 }

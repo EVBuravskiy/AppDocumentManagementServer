@@ -8,7 +8,7 @@ namespace AppDocumentManagement.InternalDocumentService.Converters
         public static InternalDocumentFile ConvertToInternalDocumentFile(MInternalDocumentFile mInternalDocumentFile)
         {
             InternalDocumentFile internalDocumentFile = new InternalDocumentFile();
-            internalDocumentFile.InternalDocumentFileID = mInternalDocumentFile.InternalDocumentID
+            internalDocumentFile.InternalDocumentFileID = mInternalDocumentFile.InternalDocumentID;
             internalDocumentFile.FileName = mInternalDocumentFile.FileName;
             internalDocumentFile.FileExtension = mInternalDocumentFile.FileExtension;
             internalDocumentFile.FileData = mInternalDocumentFile.FileData.ToByteArray();

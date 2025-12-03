@@ -27,7 +27,7 @@ namespace AppDocumentManagement.ExternalDocumentService.Services
             return Task.FromResult(boolReply);
         }
 
-        public override Task<MExternalDocumentList> GetAllDocuments(EmptyRequest request, ServerCallContext context)
+        public override Task<MExternalDocumentList> GetAllExternalDocuments(EmptyRequest request, ServerCallContext context)
         {
             ExternalDocumentController externalDocumentController = new ExternalDocumentController();
             List<ExternalDocument> externalDocuments = externalDocumentController.GetAllExternalDocuments();

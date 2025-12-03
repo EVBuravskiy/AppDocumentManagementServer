@@ -48,7 +48,7 @@ namespace AppDocumentManagement.DB.Controllers
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    employees = context.Employees.Where(e => e.isDeleted == false).ToList();
+                    employees = context.Employees.Where(e => e.IsDeleted == false).ToList();
                 }
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace AppDocumentManagement.DB.Controllers
                     Employee currentEmployee = context.Employees.SingleOrDefault(x => x.EmployeeID == employeeID);
                     if (currentEmployee != null)
                     {
-                        currentEmployee.isDeleted = true;
+                        currentEmployee.IsDeleted = true;
                         context.Employees.Update(currentEmployee);
                         context.SaveChanges();
                         result = true;

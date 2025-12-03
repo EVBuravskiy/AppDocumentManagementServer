@@ -7,7 +7,7 @@ package externalDocumentService;
 service externalDocumentAPI {
 	//ExternalDocument
 	rpc AddExternalDocument(MExternalDocument) returns (BoolReply);
-	rpc GetAllDocuments(EmptyRequest) returns (MExternalDocumentList);
+	rpc GetAllExternalDocuments(EmptyRequest) returns (MExternalDocumentList);
 	rpc GetExternalDocumentsByEmployeeReceivedDocumentID(IDRequest) returns (MExternalDocumentList);
 	rpc UpdateExternalDocument(MExternalDocument) returns (BoolReply);
 	rpc RemoveExternalDocument(IDRequest) returns (BoolReply);
