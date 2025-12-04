@@ -12,13 +12,16 @@ namespace AppDocumentManagement.DB.Controllers
             {
                 using (ApplicationContext context = new ApplicationContext())
                 {
-                    ContractorCompany contractorCompany = context.ContractorCompanies.Where(x => x.ContractorCompanyID == externalDocument.ContractorCompany.ContractorCompanyID).FirstOrDefault();
+                    ContractorCompany contractorCompany = context.ContractorCompanies.SingleOrDefault(x => x.ContractorCompanyID == externalDocument.ContractorCompanyID);
                     externalDocument.ContractorCompany = contractorCompany;
-                    if (externalDocument.ReceivingEmployee != null)
+                    externalDocument.ContractorCompanyID = contractorCompany.ContractorCompanyID;
+                    if (externalDocument.ReceivingEmployeeID != 0)
                     {
-                        Employee employee = context.Employees.Where(e => e.EmployeeID == externalDocument.ReceivingEmployee.EmployeeID).FirstOrDefault();
+                        Employee employee = context.Employees.SingleOrDefault(e => e.EmployeeID == externalDocument.ReceivingEmployeeID);
                         externalDocument.ReceivingEmployee = employee;
+                        externalDocument.ReceivingEmployeeID = employee.EmployeeID;
                     }
+                    else externalDocument.ReceivingEmployeeID = null;
                     context.ExternalDocuments.Add(externalDocument);
                     context.SaveChanges();
                     result = true;
