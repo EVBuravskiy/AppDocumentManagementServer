@@ -9,7 +9,10 @@ namespace AppDocumentManagement.EmployeeService
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddGrpc();
+            builder.Services.AddGrpc(options =>
+            {
+                options.MaxReceiveMessageSize = 20 * 1024 * 1024;
+            });
 
             var app = builder.Build();
 

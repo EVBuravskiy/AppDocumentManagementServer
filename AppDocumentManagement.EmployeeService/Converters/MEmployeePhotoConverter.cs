@@ -8,22 +8,28 @@ namespace AppDocumentManagement.EmployeeService.Converters
         public static EmployeePhoto ConvertToEmployeePhoto(MEmployeePhoto mEmployeePhoto)
         {
             EmployeePhoto employeePhoto = new EmployeePhoto();
-            employeePhoto.EmployeePhotoID = mEmployeePhoto.EmployeePhotoID;
-            employeePhoto.FileName = mEmployeePhoto.FileName;
-            employeePhoto.FileExtension = mEmployeePhoto.FileExtension;
-            employeePhoto.FileData = mEmployeePhoto.FileData.ToByteArray();
-            employeePhoto.EmployeeID = mEmployeePhoto.EmployeeID;
+            if (mEmployeePhoto != null)
+            {
+                employeePhoto.EmployeePhotoID = mEmployeePhoto.EmployeePhotoID;
+                employeePhoto.FileName = mEmployeePhoto.FileName;
+                employeePhoto.FileExtension = mEmployeePhoto.FileExtension;
+                employeePhoto.FileData = mEmployeePhoto.FileData.ToByteArray();
+                employeePhoto.EmployeeID = mEmployeePhoto.EmployeeID;
+            }
             return employeePhoto;
         }
 
         public static MEmployeePhoto ConvertToMEmployeePhoto(EmployeePhoto employeePhoto)
         {
             MEmployeePhoto mEmployeePhoto = new MEmployeePhoto();
-            mEmployeePhoto.EmployeePhotoID = employeePhoto.EmployeePhotoID;
-            mEmployeePhoto.FileName = employeePhoto.FileName;
-            mEmployeePhoto.FileExtension = employeePhoto.FileExtension;
-            mEmployeePhoto.FileData = ByteString.CopyFrom(employeePhoto.FileData);
-            mEmployeePhoto.EmployeeID = employeePhoto.EmployeeID;
+            if (employeePhoto != null)
+            {
+                mEmployeePhoto.EmployeePhotoID = employeePhoto.EmployeePhotoID;
+                mEmployeePhoto.FileName = employeePhoto.FileName;
+                mEmployeePhoto.FileExtension = employeePhoto.FileExtension;
+                mEmployeePhoto.FileData = ByteString.CopyFrom(employeePhoto.FileData);
+                mEmployeePhoto.EmployeeID = employeePhoto.EmployeeID;
+            }
             return mEmployeePhoto;
         }
     }

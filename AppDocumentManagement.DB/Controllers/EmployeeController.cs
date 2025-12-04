@@ -102,8 +102,7 @@ namespace AppDocumentManagement.DB.Controllers
                     Employee currentEmployee = context.Employees.SingleOrDefault(x => x.EmployeeID == employeeID);
                     if (currentEmployee != null)
                     {
-                        currentEmployee.IsDeleted = true;
-                        context.Employees.Update(currentEmployee);
+                        context.Employees.Remove(currentEmployee);
                         context.SaveChanges();
                         result = true;
                     }

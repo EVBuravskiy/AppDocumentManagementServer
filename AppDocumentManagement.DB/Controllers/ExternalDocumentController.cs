@@ -116,9 +116,7 @@ namespace AppDocumentManagement.DB.Controllers
                     ExternalDocument aviableDocument = context.ExternalDocuments.SingleOrDefault(x => x.ExternalDocumentID == externalDocumentID);
                     if (aviableDocument != null)
                     {
-
-                        aviableDocument.IsDeleted = true;
-                        context.ExternalDocuments.Update(aviableDocument);
+                        context.ExternalDocuments.Remove(aviableDocument);
                         context.SaveChanges();
                     }
                     List<ExternalDocumentFile> files = context.ExternalDocumentFiles.Where(d => d.ExternalDocumentID == externalDocumentID).ToList();

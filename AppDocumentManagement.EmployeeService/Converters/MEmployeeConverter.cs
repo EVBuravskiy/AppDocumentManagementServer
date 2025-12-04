@@ -24,17 +24,20 @@ namespace AppDocumentManagement.EmployeeService.Converters
         public static MEmployee ConvertToMEmployee(Employee employee)
         {
             MEmployee mEmployee = new MEmployee();
-            mEmployee.EmployeeID = employee.EmployeeID;
-            mEmployee.EmployeeFirstName = employee.EmployeeFirstName;
-            mEmployee.EmployeeLastName = employee.EmployeeLastName;
-            mEmployee.EmployeeMiddleName = employee.EmployeeMiddleName;
-            mEmployee.DepartmentID = employee.DepartmentID;
-            mEmployee.Position = employee.Position;
-            mEmployee.EmployeeRole = EmployeeRoleConverter.ToIntConvert(employee.EmployeeRole);
-            mEmployee.EmployeePhone = employee.EmployeePhone;
-            mEmployee.EmployeeEmail = employee.EmployeeEmail;
-            mEmployee.EmployeeInformation = employee.EmployeeInformation;
-            mEmployee.IsDeleted = employee.IsDeleted;
+            if (employee != null)
+            {
+                mEmployee.EmployeeID = employee.EmployeeID;
+                mEmployee.EmployeeFirstName = employee.EmployeeFirstName;
+                mEmployee.EmployeeLastName = employee.EmployeeLastName;
+                mEmployee.EmployeeMiddleName = employee.EmployeeMiddleName;
+                mEmployee.DepartmentID = employee.DepartmentID;
+                mEmployee.Position = employee.Position;
+                mEmployee.EmployeeRole = EmployeeRoleConverter.ToIntConvert(employee.EmployeeRole);
+                mEmployee.EmployeePhone = employee.EmployeePhone;
+                mEmployee.EmployeeEmail = employee.EmployeeEmail;
+                mEmployee.EmployeeInformation = employee.EmployeeInformation;
+                mEmployee.IsDeleted = employee.IsDeleted;
+            }
             return mEmployee;
         }
     }

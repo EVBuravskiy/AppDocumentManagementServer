@@ -9,7 +9,7 @@ namespace AppDocumentManagement.EmployeeService.Converters
             RegistredUser registredUser = new RegistredUser();
             registredUser.RegistredUserID = mRegistredUser.RegistredUserID;
             registredUser.RegistredUserLogin = mRegistredUser.RegistredUserLogin;
-            registredUser.RegistredUserPassword = mRegistredUser.RegistredUserPassword;
+            registredUser.RegistredUserPassword = mRegistredUser.RegistredUserPassword ?? "";
             registredUser.UserRole = UserRoleConverter.BackConvert(mRegistredUser.UserRole);
             registredUser.RegistredUserTime = DateTime.Parse(mRegistredUser.RegistredUserTime);
             registredUser.EmployeeID = mRegistredUser.EmployeeID;
@@ -22,7 +22,7 @@ namespace AppDocumentManagement.EmployeeService.Converters
             MRegistredUser mRegistredUser = new MRegistredUser();
             mRegistredUser.RegistredUserID = registredUser.RegistredUserID;
             mRegistredUser.RegistredUserLogin = registredUser.RegistredUserLogin;
-            mRegistredUser.RegistredUserPassword = registredUser.RegistredUserPassword;
+            mRegistredUser.RegistredUserPassword = registredUser.RegistredUserPassword ?? "";
             mRegistredUser.UserRole = UserRoleConverter.ToIntConvert(registredUser.UserRole);
             mRegistredUser.RegistredUserTime = registredUser.RegistredUserTime.ToShortDateString();
             mRegistredUser.EmployeeID = registredUser.EmployeeID;

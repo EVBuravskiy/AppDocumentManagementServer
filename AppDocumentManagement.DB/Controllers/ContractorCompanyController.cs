@@ -126,8 +126,7 @@ namespace AppDocumentManagement.DB.Controllers
                         ContractorCompany aviableContractorCompany = context.ContractorCompanies.SingleOrDefault(c => c.ContractorCompanyID == contractorCompanyID);
                         if (aviableContractorCompany != null)
                         {
-                            aviableContractorCompany.IsDeleted = true;
-                            context.ContractorCompanies.Update(aviableContractorCompany);
+                            context.ContractorCompanies.Remove(aviableContractorCompany);
                             context.SaveChanges();
                             result = true;
                         }
