@@ -82,7 +82,7 @@ namespace AppDocumentManagement.DB.Controllers
                         aviableDocument.ExternalDocumentTitle = document.ExternalDocumentTitle;
                         aviableDocument.ExternalDocumentNumber = document.ExternalDocumentNumber;
                         aviableDocument.ExternalDocumentDate = document.ExternalDocumentDate;
-                        ContractorCompany contractorCompany = context.ContractorCompanies.SingleOrDefault(x => x.ContractorCompanyID == document.ContractorCompany.ContractorCompanyID);
+                        ContractorCompany contractorCompany = context.ContractorCompanies.SingleOrDefault(x => x.ContractorCompanyID == document.ContractorCompanyID);
                         aviableDocument.ContractorCompany = contractorCompany;
                         aviableDocument.ExternalDocumentType = document.ExternalDocumentType;
                         aviableDocument.ExternalDocumentFiles = document.ExternalDocumentFiles;
@@ -91,6 +91,13 @@ namespace AppDocumentManagement.DB.Controllers
                         if (document.ReceivingEmployee != null)
                         {
                             Employee employee = context.Employees.SingleOrDefault(x => x.EmployeeID == document.ReceivingEmployee.EmployeeID);
+                            aviableDocument.ReceivingEmployee = employee;
+                            aviableDocument.ReceivingEmployeeID = employee.EmployeeID;
+                            aviableDocument.ExternalDocumentSendingDate = document.ExternalDocumentSendingDate;
+                        }
+                        else if(document.ReceivingEmployeeID != 0)
+                        {
+                            Employee employee = context.Employees.SingleOrDefault(x => x.EmployeeID == document.ReceivingEmployeeID);
                             aviableDocument.ReceivingEmployee = employee;
                             aviableDocument.ExternalDocumentSendingDate = document.ExternalDocumentSendingDate;
                         }
