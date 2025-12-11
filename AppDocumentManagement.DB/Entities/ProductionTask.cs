@@ -14,7 +14,7 @@
         public string? ProductionTaskDescription { get; set; }
         public List<Employee> Employee { get; set; } = new List<Employee>();
         public ProductionTaskStatus ProductionTaskStatus { get; set; }
-        public List<string> SubTasks { get; set; } = new List<string>();
+        public List<ProductionSubTask>? ProductionSubTasks { get; set; }
         public List<ProductionTaskComment>? ProductionTaskComments { get; set; }
     }
 }
