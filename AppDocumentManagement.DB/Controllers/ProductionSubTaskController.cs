@@ -58,7 +58,7 @@ namespace AppDocumentManagement.DB.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка! Ошибка в сохранении подзадачи в базу данных");
+                Console.WriteLine("Ошибка! Ошибка в получении подзадач из базы данных");
             }
             return productionSubTasks;
         }
