@@ -12,7 +12,7 @@
         public DateTime ProductionTaskCreateDate { get; set; }
         public DateTime ProductionTaskDueDate { get; set; }
         public string? ProductionTaskDescription { get; set; }
-        public List<Employee> Employee { get; set; } = new List<Employee>();
+        public List<Employee> Employees { get; set; } = new List<Employee>();
         public ProductionTaskStatus ProductionTaskStatus { get; set; }
         public List<ProductionSubTask>? ProductionSubTasks { get; set; }
         public List<ProductionTaskComment>? ProductionTaskComments { get; set; }

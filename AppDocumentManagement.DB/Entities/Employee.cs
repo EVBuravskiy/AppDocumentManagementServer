@@ -15,6 +15,6 @@
         public string? EmployeeInformation { get; set; }
         public string EmployeeFirstMiddleName => $"{EmployeeFirstName} {EmployeeMiddleName}";
         public bool IsDeleted { get; set; } = false;
-        public List<ProductionTask> ProductionTasks { get; set; }
+        public List<ProductionTask> ProductionTasks { get; set; } = new List<ProductionTask>();
     }
 }
